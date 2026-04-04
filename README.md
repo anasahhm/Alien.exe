@@ -42,7 +42,7 @@ A classic arcade-style space shooter built with Python and Pygame. Control your 
 ### 1. Clone the repository
  
 ```bash
-git clone https://github.com/your-username/orbital-warzone.git
+git clone https://github.com/anasahhm/orbital-warzone.git
 cd orbital-warzone
 ```
  
