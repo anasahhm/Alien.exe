@@ -1,4 +1,5 @@
 import pygame  # type: ignore[import]
+from pygame.sprite import Group  # type: ignore[import]
 
 from settings import Settings
 from ship import Ship
@@ -13,13 +14,17 @@ def run_game():
     pygame.display.set_caption("Alien.exe")
 
     # Create a ship
-    ship = Ship(screen)
+    ship = Ship(ai_settings, screen)
+
+    # Create a group to store bullets
+    bullets = Group()
 
     #start the main loop for the game
     while True:        
         #watch for keyboard and mouse events
-        gf.check_events(ship)
+        gf.check_events(ai_settings, screen, ship, bullets)
         ship.update()
-        gf.update_sceen(ai_settings, screen, ship)
+        gf.update_bullets(bullets)
+        gf.update_screen(ai_settings, screen, ship, bullets)
 
 run_game()
